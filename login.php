@@ -33,16 +33,71 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .login-container {
+            background: white;
+            max-width: 400px;
+            margin: 80px auto;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #004d99;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
+
+<div class="login-container">
     <h2>Login</h2>
-    <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
+    <?php if (!empty($error)) echo "<p class='error'>$error</p>"; ?>
     <form method="POST">
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br><br>
-        <label>Password:</label><br>
-        <input type="password" name="password" required><br><br>
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
         <button type="submit">Login</button>
     </form>
+</div>
+
 </body>
 </html>
