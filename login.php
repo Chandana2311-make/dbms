@@ -35,58 +35,83 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f4f4f4;
             margin: 0;
-            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1526129318478-3c10260cbb4c'); /* soft floral background */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
         .login-container {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            width: 100%;
             max-width: 400px;
-            margin: 80px auto;
-            padding: 30px 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        h2 {
             text-align: center;
-            color: #333;
         }
+
+        h2 {
+            color: #4b2c5e;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
         label {
+            display: block;
+            margin-bottom: 6px;
+            color: #4a4a4a;
             font-weight: bold;
+            text-align: left;
         }
+
         input[type="email"], input[type="password"] {
             width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 20px;
+            padding: 12px;
             border: 1px solid #ccc;
-            border-radius: 6px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 16px;
         }
+
         button {
-            width: 100%;
-            padding: 10px;
-            background: #0066cc;
+            background-color: #8e44ad;
             color: white;
             border: none;
-            border-radius: 6px;
+            padding: 12px;
+            width: 100%;
             font-size: 16px;
+            border-radius: 8px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
+
         button:hover {
-            background: #004d99;
+            background-color: #732d91;
         }
+
         .error {
             color: red;
-            text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
         }
     </style>
 </head>
 <body>
 
 <div class="login-container">
-    <h2>Login</h2>
+    <h2>🌸 Event Portal Login</h2>
     <?php if (!empty($error)) echo "<p class='error'>$error</p>"; ?>
     <form method="POST">
         <label>Email:</label>
@@ -97,6 +122,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <button type="submit">Login</button>
     </form>
+    <div class="footer-note">
+        Welcome to a space where events bloom 🌼
+    </div>
 </div>
 
 </body>
