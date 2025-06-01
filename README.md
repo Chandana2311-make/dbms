@@ -7,6 +7,23 @@ This is a PHP-MySQL based web application that allows users to:
 - Register for events
 - View their registered events
 
+# PHP Event Registration System
+
+A simple web-based event registration system using PHP and MySQL.
+
+## Features
+- View available events
+- Register for events
+- View registered events
+- Clean design using internal CSS (no images or external assets)
+
+## Setup Instructions
+
+1. *Clone or move project* to C:\xampp\htdocs\event_system
+2. *Create DB* via [phpMyAdmin](http://localhost/phpmyadmin):
+   ```sql
+   CREATE DATABASE event_system;
+
 Admins can:
 - Add new events
 - Edit existing events
