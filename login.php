@@ -37,11 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-image: url('flower.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -49,42 +46,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .login-container {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: #ffffffcc;
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            width: 320px;
             text-align: center;
-            width: 350px;
         }
 
-        h2 {
+        .login-container h2 {
+            color: #5a189a;
             margin-bottom: 20px;
-            color: #444;
         }
 
-        input[type="email"],
-        input[type="password"] {
-            width: 90%;
-            padding: 10px;
+        .login-container input {
+            width: 100%;
+            padding: 12px;
             margin: 10px 0;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            font-size: 16px;
+            outline: none;
+            font-size: 14px;
         }
 
-        button {
-            background-color: #ff69b4;
+        .login-container button {
+            background-color: #7b2cbf;
             color: white;
-            padding: 10px 25px;
+            padding: 12px;
+            width: 100%;
             border: none;
             border-radius: 8px;
-            cursor: pointer;
             font-size: 16px;
-            margin-top: 15px;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
-        button:hover {
-            background-color: #ff1493;
+        .login-container button:hover {
+            background-color: #5a189a;
         }
 
         .error {
@@ -99,8 +97,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Login</h2>
         <?php if (!empty($error)) echo "<div class='error'>$error</div>"; ?>
         <form method="POST">
-            <input type="email" name="email" placeholder="Email" required><br>
-            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
     </div>
